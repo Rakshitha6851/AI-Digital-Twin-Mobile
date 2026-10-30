@@ -127,7 +127,7 @@ def render_medical_report_upload():
                 col1, col2 = st.columns(2)
                 with col1:
                     st.markdown("##### Uploaded Image")
-                    st.image(pil_image, use_container_width=True)
+                    st.image(pil_image, use_column_width=True)
 
                 # --- Blur check (OpenCV Laplacian-variance method) ---
                 # Runs BEFORE the full preprocessing/OCR pipeline so we don't
@@ -148,7 +148,7 @@ def render_medical_report_upload():
 
                 with col2:
                     st.markdown("##### Preprocessed Image (for OCR)")
-                    st.image(processed_image, use_container_width=True, clamp=True)
+                    st.image(processed_image, use_column_width=True, clamp=True)
 
                 with st.spinner("Extracting text via OCR (pytesseract)..."):
                     raw_text = extract_text_from_image(processed_image)
